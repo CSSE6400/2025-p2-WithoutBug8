@@ -1,7 +1,6 @@
 ## 这是Practice-2的项目笔记
 
 #### 项目结构
-[English](README.md) | [简体中文Chinese](README_ZH.md)
 
 ```shell
 .
