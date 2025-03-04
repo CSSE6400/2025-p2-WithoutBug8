@@ -45,7 +45,9 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Correct Unit Tests
-        setup-command: pip3 install poetry
+        setup-command: |
+          pip3 install poetry
+          poetry install --no-interaction --no-ansi   # 安装依赖
         command: "./.csse6400/bin/unittest.sh"
         timeout: 10
         max-score: 25
