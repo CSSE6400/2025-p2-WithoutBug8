@@ -37,6 +37,7 @@ TODO_FUTURE_2 = {
 
 
 class TestTodo(TodoTest):
+    # 这个函数负责插入上面的数据内容到数据库中
     def _populate_records(self, todos):
         with self.app.app_context():
             from todo.models import db
@@ -95,6 +96,7 @@ class TestTodo(TodoTest):
         self.assertEqual(len(response.json), 1)
         self.assertDictSubset(TODO_1, response.json[0])
 
+    # 应该是，从当前开始到未来5天内的数据，包括过去已经完成的数据
     def test_get_items_window(self):
         self._populate_records([TODO_1, TODO_2, TODO_FUTURE_1, TODO_FUTURE_2])
 
